@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="gui.js"></script>
+<link rel="stylesheet" href="gui.css">
+
+<body>
+    <div class="row">
+
+<div id='d1' class="column1" style="padding-top: 40px;">
+
+<a id="boring" href="#" >
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Docker Version
+    <button class="button" type="submit" onclick="ajax('sudo docker --version');" >Run</button> 
+</a>
+
+<a id="boring" href="#" >
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Show Containers
+    <button class="button" type="submit" onclick="ajax('sudo docker ps -a');" >Run</button> 
+</a>
+<br/>
+<a id="boring" href="#">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Show Images
+    <button class="button" onclick="ajax('sudo docker images');" >Run</button>
+</a>
+<a id="boring" href="#">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Pull Image<br/>
+    <input id="x" name="x" placeholder="Image:tag"/>
+    
+    <button class="button"  onclick="ajax('sudo docker pull ' + printer('x'));">Run</button>  
+</a><br/>
+
+<a id="boring" href="#">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Docker Run<br/>
+    <input id="osName" name="osName" placeholder="Conatainer Name"/>
+    <input id="imageName" name="imageName" placeholder="Image:tag"/>
+    
+    
+    <button class="button"  onclick="ajax('sudo docker run -dit --name '+ printer('osName') + ' ' + printer('imageName'));">Run</button> 
+</a>
+<br/>
+
+<a id="boring" href="#">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Start Container<br/>
+    <input id="start" name="start" placeholder="Name | ID "/>
+    
+    <button class="button"  onclick="ajax('sudo docker start ' + printer('start'));">Run</button>
+</a>
+
+<a id="boring" href="#">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Delete Containers<br/>
+    <input id="delete" name="delete" placeholder="Name | ID | 'all'"/>
+    
+    <button class="button"  onclick="ajax('sudo docker rm -f ' + printer('delete'));">Run</button>
+</a>
+<br/>
+
+<a id="boring" href="#">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Execute Command<br/>
+    <input id="cname" name="cname" placeholder="Container Name"/>
+    <input id="command" name="command" placeholder="Command "/>
+    
+    <button class="button"  onclick="ajax('sudo docker exec ' + printer('cname') + ' ' + printer('command'));">Run</button>
+</a>
+
+</div>
+
+<pre>
+<div id="d2" class="column2" style="padding-top: 100px;">
+	<h1><center>Hello, This is output area.</center></h1>
+</div>
+</pre>
+</div>
+<div class="navbar">
+    <ul>
+    <a href="index.html">Home</a>
+    <a id="blablabla" href="gui.html">Docker GUI</a>
+    <a id="blablabla" href="cli.html">Docker CLI</a>
+    <div class="dropdown">
+        <button class="dropbtn">Docker Products 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="https://www.docker.com/products/docker-hub">Docker Hub</a>
+          <a href="https://www.docker.com/products/docker-desktop">Docker Desktop</a>
+        </div>
+      </div>
+    <div class="dropdown">
+      <button class="dropbtn">Docker Support 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a id="blablabla" href="https://docs.docker.com/">Docker Documentation</a>
+        <a id="blablabla" href="https://docs.docker.com/engine/reference/builder/">DockerFile</a>
+        <a id="blablabla" href="https://phoenixnap.com/kb/list-of-docker-commands-cheat-sheet">Docker Cheat Sheet</a>
+        <a id="blablabla" href="https://www.youtube.com/watch?v=NPgXHA41-YM&list=PLIZi9I-myrnca9-ge_4Eg75Z3F_ZmodUX">Docker Tutorials</a>
+      </div>
+    </div> 
+    <div class="dropdown">
+        <button class="dropbtn">Blog 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a id="blablabla" href="https://wordpress.com/read/feeds/117927692/posts/3366562756">Machine Learning with Docker</a>
+          <a id="blablabla" href="https://www.linkedin.com/pulse/setting-up-python-interpreter-running-code-docker-container-singh-2c">Python with Docker</a>
+          <a id="blablabla" href="https://www.linkedin.com/pulse/configuring-httpd-server-docker-container-gautam-singh">Webserver in Docker</a>
+        </div>
+      </div>
+    <a id="blablabla" href="Contacts.html">About us</a>
+</ul>
+  </div>
+</body>
+</html>
